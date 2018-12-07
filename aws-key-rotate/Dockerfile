@@ -1,5 +1,5 @@
 FROM golang:stretch as builder
-RUN go get github.com/fullscreen/aws-rotate-key/...
+RUN go get github.com/beckje01/aws-rotate-key/...
 
 FROM alpine:latest
 RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2 && apk update && apk add ca-certificates && rm -rf /var/cache/apk/*

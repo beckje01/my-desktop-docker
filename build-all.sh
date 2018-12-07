@@ -14,8 +14,8 @@ build_and_push(){
 	build_dir=$3
 
 	echo "Building ${REPO_URL}/${base}:${suite} for context ${build_dir}"
-	docker build --rm --force-rm -t ${REPO_URL}/${base}:${suite} ${build_dir} || return 1
-	img build -t ${REPO_URL}/${base}:${suite} ${build_dir} || true
+	docker build --rm --force-rm -t ${REPO_URL}/${base}:${suite} ${build_dir} || return true
+	# img build -t ${REPO_URL}/${base}:${suite} ${build_dir} || true
 
 	# on successful build, push the image
 	echo "                       ---                                   "
